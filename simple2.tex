@@ -1,0 +1,41 @@
+%https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
+\documentclass{article}
+\usepackage[backend=biber]{biblatex} %Imports biblatex package
+\usepackage{enumitem}
+\usepackage{kantlipsum}
+
+\DeclareFieldFormat{addendum}{\paragraph\indent{\textbf{Annotation:}\addspace#1}\\}
+\setenumerate{listparindent=\parindent}
+\addbibresource{sample.bib} %Import the bibliography file
+\title{Simple Article}
+\author{Phil Kirk}
+\date{4 October 2023}
+\begin{document}
+\maketitle
+\begin{abstract}
+    This is a simple example showing some of the features
+    of TeX.
+\end{abstract}
+\tableofcontents
+\section{Part1}
+Citing\cite{einstein}
+\section{Part2}
+\kant[20]
+
+\section{References}
+\kant[40]
+
+\kant[39]
+
+\begin{enumerate}
+\item \fullcite{einstein}
+
+\kant[41]
+
+\item \fullcite{dirac}
+
+\kant[43]
+
+\end{enumerate}
+\printbibliography
+\end{document}
